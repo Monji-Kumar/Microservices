@@ -18,12 +18,14 @@ public class Order {
     @SequenceGenerator(sequenceName = "order_id_seq", name = "order_id_seq_gen", allocationSize = 1, initialValue = 1)
     private Long id;
 
+    @Column(name = "order_status")
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    private Double price;
+    @Column(name = "total_price")
+    private Double totalPrice;
 
-    @OneToMany(mappedBy = "orderId", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItems;
 
 }
