@@ -1,10 +1,9 @@
-package com.monji.ecommerce.order_service.dto;
+package com.monji.ecommerce.inventory_service.dto;
 
 import lombok.Data;
 
 @Data
 public class OrderRequestItemDto {
-    private Long orderId;
     private Long productId;
     private Integer quantity;
 }
